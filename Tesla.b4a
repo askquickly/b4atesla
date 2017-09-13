@@ -1,0 +1,87 @@
+﻿Version=7.28
+NumberOfModules=1
+Module1=Starter
+Build1=Default,b4a.example.telsamotors
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="19"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~'End of default text.~\n~
+IconFile=
+NumberOfFiles=1
+File1=photo.jpg
+NumberOfLibraries=2
+Library1=core
+Library2=tesla
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: Tesla
+	#VersionCode: 17
+	#VersionName: 
+	#SupportedOrientations: unspecified
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: True
+	#IncludeTitle: False
+#End Region
+
+Sub Process_Globals
+End Sub
+
+Sub Globals
+Dim Teslamotor As Tesla
+End Sub
+				'###################################################################
+	   			'# 					Unofficial B4A Tesla API 					   #
+				'###################################################################
+Sub Activity_Create(FirstTime As Boolean)
+	Activity.SetBackgroundImage(LoadBitmapSample(File.DirAssets, "photo.jpg", Activity.Width, Activity.Height))
+	'set to true for a mock server response
+	Teslamotor.Initialize(Me,"Tesla","abc123",True)  
+	
+	'Production Use only overrides token above - Still testing
+	'Teslamotor.GetTeslaToken("xxx", "xxxx")
+End Sub
+Sub Activity_Resume
+	'Gets a list of all your vehicles
+	Log(Teslamotor.GetVehicles("1"))
+	'Various functions
+	Log(Teslamotor.MobileAccess)
+	Log(Teslamotor.Wakeup)
+	Log(Teslamotor.ValetMode(False))  ' True
+	'Log(Teslamotor.SetTemperature("50", "50"))   'DONT USE YET - FAULT LOOP
+	Log(Teslamotor.RemoteStart("TEST"))
+	Log(Teslamotor.LockDoors)
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+End Sub
+
+Sub Tesla_Vehicles(a As Map)
+	Log(a)
+	ToastMessageShow(a, True)
+End Sub
+Sub Tesla_Mobileaccess(a As Map)
+Log(a)
+End Sub
+
+Sub Tesla_Wakeup(a As Map)
+	Log(a)
+End Sub
+
+Sub Tesla_ValetMode(a As Map)
+	Log(a)
+End Sub
+
+Sub Tesla_OpenChargePort(a As Map)
+	Log(a)
+End Sub
+
+Sub Tesla_SetTemperature(a As Map)
+	Log(a)
+End Sub
+
+Sub Tesla_RemoteStart(a As Map)
+	Log(a)
+End Sub
+Sub Tesla_LockDoors(a As Map)
+	Log(a)
+End Sub
