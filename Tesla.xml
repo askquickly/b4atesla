@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <doclet-version-NOT-library-version>1.00</doclet-version-NOT-library-version>
+  <dependsOn>okhttp</dependsOn>
+  <dependsOn includesSingletonModules="true">okhttputils2</dependsOn>
+  <dependsOn>json</dependsOn>
+  <dependsOn>randomaccessfile</dependsOn>
+  <dependsOn>okhttp-3.5.0</dependsOn>
+  <dependsOn>okio-1.11.0</dependsOn>
+  <dependsOn>stringutils</dependsOn>
+  <class>
+    <name>org.askquickly.teslaapi.tesla</name>
+    <shortname>Tesla</shortname>
+    <owner>process</owner>
+    <event>Vehicles(meta As Map)</event>
+    <event>Mobileaccess(meta As boolean)</event>
+    <event>Wakeup(meta As Map)</event>
+    <event>ValetMode(meta As Map)</event>
+    <event>OpenChargePort(meta As Map)</event>
+    <event>ChargeLimitStandard(meta As Map)</event>
+    <event>ChargeLimitMaxRange(meta As Map)</event>
+    <event>ChargeLimit(meta As Map)</event>
+    <event>StartCharge(meta As Map)</event>
+    <event>StopCharge(meta As Map)</event>
+    <event>FlashLights(meta As Map)</event>
+    <event>HonkHorn(meta As Map)</event>
+    <event>UnlockDoors(meta As Map)</event>
+    <event>LockDoors(meta As Map)</event>
+    <event>SetTemperature(meta As Map)</event>
+    <event>StartHMVC(meta As Map)</event>
+    <event>StopHMVC(meta As Map)</event>
+    <event>PanoramicRoof(meta As Map)</event>
+    <event>RemoteStart(meta As Map)</event>
+    <event>OpenTrunk(meta As Map)</event>
+    <method>
+      <name>IsInitialized</name>
+      <comment>Tests whether the object has been initialized.</comment>
+      <returntype>boolean</returntype>
+    </method>
+    <method>
+      <name DesignerName="ChargeLimit">_chargelimit</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>limit</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="ChargeLimitMaxRange">_chargelimitmaxrange</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="ChargeLimitStandard">_chargelimitstandard</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Class_Globals">_class_globals</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="FlashLights">_flashlights</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="GetTeslaToken">_getteslatoken</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>email</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>password</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="GetVehicles">_getvehicles</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>accountID</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="GetVersion">_getversion</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="HonkHorn">_honkhorn</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Initialize">_initialize</name>
+      <comment> Initialize the Tesla Class.
+ Parameters
+ CallbackModule
+ EventName
+ AccessToken
+ debug
+&lt;code&gt;Example:
+Tesla.Initialize(Me,"Tesla","secretkey",True)&lt;/code&gt;
+</comment>
+      <returntype>String</returntype>
+      <parameter>
+        <name>ba</name>
+        <type>anywheresoftware.b4a.BA</type>
+      </parameter>
+      <parameter>
+        <name>CallbackModule</name>
+        <type>Object</type>
+      </parameter>
+      <parameter>
+        <name>EventName</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>AccessToken</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>debug</name>
+        <type>boolean</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="JobDone">_jobdone</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>Job</name>
+        <type>anywheresoftware.b4a.samples.httputils2.httpjob</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="LockDoors">_lockdoors</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="logVersionInfo">_logversioninfo</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Mobileaccess">_mobileaccess</name>
+      <comment>Get information about the current user's Vehicles.
+&lt;code&gt;Example:
+Tesla.GetVehicles()&lt;/code&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="OpenChargePort">_openchargeport</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="PanoramicRoof">_panoramicroof</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>percent</name>
+        <type>int</type>
+      </parameter>
+      <parameter>
+        <name>state</name>
+        <type>int</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="RemoteStart">_remotestart</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>password</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="setAccessToken" HideFromIDE="true">_setaccesstoken</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>token</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="SetTemperature">_settemperature</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>ds</name>
+        <type>String</type>
+      </parameter>
+      <parameter>
+        <name>ps</name>
+        <type>String</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="StartCharge">_startcharge</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="StartHVAC">_starthvac</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="StopCharge">_stopcharge</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="StopHVAC">_stophvac</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="Trunk">_trunk</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="UnlockDoors">_unlockdoors</name>
+      <returntype>String</returntype>
+    </method>
+    <method>
+      <name DesignerName="ValetMode">_valetmode</name>
+      <returntype>String</returntype>
+      <parameter>
+        <name>a</name>
+        <type>boolean</type>
+      </parameter>
+    </method>
+    <method>
+      <name DesignerName="Wakeup">_wakeup</name>
+      <comment>&lt;code&gt;Example:
+Tesla.Wakeup()&lt;/code&gt;
+</comment>
+      <returntype>String</returntype>
+    </method>
+    <property>
+      <name DesignerName="AccessToken">_accesstoken</name>
+      <returntype>void</returntype>
+      <parameter>
+        <name>Value</name>
+        <type>String</type>
+      </parameter>
+    </property>
+  </class>
+  <version>0.1</version>
+  <author>Jamie John &lt;jamie8763@gmail.com&gt;</author>
+</root>
