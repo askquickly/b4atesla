@@ -6,8 +6,6 @@
  
 ## API Specification
  
- The [API Specification](/) provides more detail on the paths and operations including examples.
- 
 | Path                          | Supported Methods | Description                        |
 | ----------------------------- | ----------------- | ---------------------------------- |
 | [```/v1/api/users```](/docs/api_specification.md#post-v1apiusers)              | POST    |  Creates a new user            |
